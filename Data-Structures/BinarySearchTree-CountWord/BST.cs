@@ -94,7 +94,7 @@ namespace BinarySearchTree_CountWord
 			if (root != null)
 			{
 				LNR(root.Left);
-				WriteLine(root.Word + " " + root.Count);
+				WriteLine($"{root.Word,10}\t{root.Count}");
 				LNR(root.Right);
 			}
 		}

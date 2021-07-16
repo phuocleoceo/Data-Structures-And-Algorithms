@@ -24,6 +24,16 @@ namespace GenericList
 			{
 				WriteLine(list[i]);
 			}
+			WriteLine("----------------------------------------------------");
+			list.AddRange(new Account[]{
+				new Account("juky","Juky San","12",0),
+				new Account("amee","Amee","23",0)
+			});
+
+			for (int i = 0; i < list.Count; i++)
+			{
+				WriteLine(list[i]);
+			}
 		}
 	}
 }

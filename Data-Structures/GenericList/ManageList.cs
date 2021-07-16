@@ -44,20 +44,55 @@ namespace GenericList
 			}
 			else
 			{
+				// Create a Temp Array to backup Current Array
+				T[] temp = new T[size];
+				for (int i = 0; i < size; i++)
+				{
+					temp[i] = data[i];
+				}
+				// Increase Current Array Length 1 and Restore old Data
+				data = null;
+				data = new T[size + 1];
+				for (int i = 0; i < size; i++)
+				{
+					data[i] = temp[i];
+				}
+				// Insert item to end of New Array
+				data[size] = item;
+			}
+			size++;
+		}
+
+		public void AddRange(T[] extraArray)
+		{
+			int extraLength = extraArray.Length;
+			if (size == 0)
+			{
+				data = new T[extraLength];
+				for (int i = 0; i < extraLength; i++)
+				{
+					data[i] = extraArray[i];
+				}
+			}
+			else
+			{
 				T[] temp = new T[size];
 				for (int i = 0; i < size; i++)
 				{
 					temp[i] = data[i];
 				}
 				data = null;
-				data = new T[size + 1];
-				data[size] = item;
+				data = new T[size + extraLength];
 				for (int i = 0; i < size; i++)
 				{
 					data[i] = temp[i];
 				}
+				for (int i = 0; i < extraLength; i++)
+				{
+					data[i + extraLength] = extraArray[i];
+				}
 			}
-			size++;
+			size += extraLength;
 		}
 
 		// Return First Position of a Item, but It's wrong with Class Instance (Object)

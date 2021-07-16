@@ -33,8 +33,7 @@ namespace Dictionary_CountWord
 		static void Main(string[] args)
 		{
 			string text = "hehe minh la phuoc phuoc nice to meet you";
-			Dictionary<string, int> dict = Handling(text);
-			Print(dict);
+			Print(Handling(text));
 		}
 	}
 }

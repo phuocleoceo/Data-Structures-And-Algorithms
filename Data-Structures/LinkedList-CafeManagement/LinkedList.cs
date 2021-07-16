@@ -4,15 +4,15 @@ namespace LinkedList_CafeManagement
 {
 	public class LinkedList
 	{
-		private Drink List;
+		private Node List;
 
 		public LinkedList()
 		{
 			List = null;
 		}
-		public Drink CreateNode(string Name, double Price)
+		public Node CreateNode(string Name, double Price)
 		{
-			Drink d = new Drink();
+			Node d = new Node();
 			d.Name = Name;
 			d.Price = Price;
 			d.Next = null;
@@ -20,7 +20,7 @@ namespace LinkedList_CafeManagement
 		}
 		public void AddToHead(string Name, double Price)
 		{
-			Drink temp = CreateNode(Name, Price);
+			Node temp = CreateNode(Name, Price);
 			if (List == null) List = temp;
 			else
 			{
@@ -31,11 +31,11 @@ namespace LinkedList_CafeManagement
 
 		public void AddToTail(string Name, double Price)
 		{
-			Drink temp = CreateNode(Name, Price);
+			Node temp = CreateNode(Name, Price);
 			if (List == null) List = temp;
 			else
 			{
-				Drink p = List;
+				Node p = List;
 				while (p.Next != null) p = p.Next;
 				p.Next = temp;
 			}
@@ -49,7 +49,7 @@ namespace LinkedList_CafeManagement
 			}
 			else
 			{
-				Drink p = List;
+				Node p = List;
 				int k = 1;
 				while (p != null && k != position)
 				{
@@ -63,7 +63,7 @@ namespace LinkedList_CafeManagement
 				}
 				else
 				{
-					Drink temp = CreateNode(Name, Price);
+					Node temp = CreateNode(Name, Price);
 					temp.Next = p.Next;
 					p.Next = temp;
 				}
@@ -72,7 +72,7 @@ namespace LinkedList_CafeManagement
 
 		public void ExportList()
 		{
-			for (Drink p = List; p != null; p = p.Next)
+			for (Node p = List; p != null; p = p.Next)
 			{
 				WriteLine($"{p.Name,20}\t{p.Price}VND");
 			}

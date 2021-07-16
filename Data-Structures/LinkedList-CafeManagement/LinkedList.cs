@@ -4,6 +4,12 @@ namespace LinkedList_CafeManagement
 {
 	public class LinkedList
 	{
+		private Drink List;
+
+		public LinkedList()
+		{
+			List = null;
+		}
 		public Drink CreateNode(string Name, double Price)
 		{
 			Drink d = new Drink();
@@ -12,7 +18,7 @@ namespace LinkedList_CafeManagement
 			d.Next = null;
 			return d;
 		}
-		public Drink AddToHead(Drink List, string Name, double Price)
+		public void AddToHead(string Name, double Price)
 		{
 			Drink temp = CreateNode(Name, Price);
 			if (List == null) List = temp;
@@ -21,10 +27,9 @@ namespace LinkedList_CafeManagement
 				temp.Next = List;
 				List = temp;
 			}
-			return List;
 		}
 
-		public Drink AddToTail(Drink List, string Name, double Price)
+		public void AddToTail(string Name, double Price)
 		{
 			Drink temp = CreateNode(Name, Price);
 			if (List == null) List = temp;
@@ -34,14 +39,13 @@ namespace LinkedList_CafeManagement
 				while (p.Next != null) p = p.Next;
 				p.Next = temp;
 			}
-			return List;
 		}
 
-		public Drink AddToAnyPosition(Drink List, int position, string Name, double Price)
+		public void AddToAnyPosition(int position, string Name, double Price)
 		{
 			if (position == 0 || List == null)
 			{
-				List = AddToHead(List, Name, Price);
+				AddToHead(Name, Price);
 			}
 			else
 			{
@@ -55,7 +59,7 @@ namespace LinkedList_CafeManagement
 				// k > List.Lenght-1
 				if (k != position)
 				{
-					List = AddToTail(List, Name, Price);
+					AddToTail(Name, Price);
 				}
 				else
 				{
@@ -64,10 +68,9 @@ namespace LinkedList_CafeManagement
 					p.Next = temp;
 				}
 			}
-			return List;
 		}
 
-		public void ExportList(Drink List)
+		public void ExportList()
 		{
 			for (Drink p = List; p != null; p = p.Next)
 			{

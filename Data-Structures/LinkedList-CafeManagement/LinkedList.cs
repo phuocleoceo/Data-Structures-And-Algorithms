@@ -1,3 +1,5 @@
+using static System.Console;
+
 namespace LinkedList_CafeManagement
 {
 	public class LinkedList
@@ -63,6 +65,14 @@ namespace LinkedList_CafeManagement
 				}
 			}
 			return List;
+		}
+
+		public void ExportList(Drink List)
+		{
+			for (Drink p = List; p != null; p = p.Next)
+			{
+				WriteLine($"{p.Name,20}\t{p.Price}VND");
+			}
 		}
 	}
 }

@@ -10,17 +10,16 @@ namespace LinkedList_CafeManagement
 		{
 			List = null;
 		}
-		public Node CreateNode(string Name, double Price)
+		public Node CreateNode(Drink d)
 		{
-			Node d = new Node();
-			d.Name = Name;
-			d.Price = Price;
-			d.Next = null;
-			return d;
+			Node temp = new Node();
+			temp.Drink = d;
+			temp.Next = null;
+			return temp;
 		}
-		public void AddToHead(string Name, double Price)
+		public void AddToHead(Drink d)
 		{
-			Node temp = CreateNode(Name, Price);
+			Node temp = CreateNode(d);
 			if (List == null) List = temp;
 			else
 			{
@@ -29,9 +28,9 @@ namespace LinkedList_CafeManagement
 			}
 		}
 
-		public void AddToTail(string Name, double Price)
+		public void AddToTail(Drink d)
 		{
-			Node temp = CreateNode(Name, Price);
+			Node temp = CreateNode(d);
 			if (List == null) List = temp;
 			else
 			{
@@ -41,11 +40,11 @@ namespace LinkedList_CafeManagement
 			}
 		}
 
-		public void AddToAnyPosition(int position, string Name, double Price)
+		public void AddToAnyPosition(int position, Drink d)
 		{
 			if (position == 0 || List == null)
 			{
-				AddToHead(Name, Price);
+				AddToHead(d);
 			}
 			else
 			{
@@ -59,11 +58,11 @@ namespace LinkedList_CafeManagement
 				// k > List.Lenght-1
 				if (k != position)
 				{
-					AddToTail(Name, Price);
+					AddToTail(d);
 				}
 				else
 				{
-					Node temp = CreateNode(Name, Price);
+					Node temp = CreateNode(d);
 					temp.Next = p.Next;
 					p.Next = temp;
 				}
@@ -74,7 +73,7 @@ namespace LinkedList_CafeManagement
 		{
 			for (Node p = List; p != null; p = p.Next)
 			{
-				WriteLine($"{p.Name,20}\t{p.Price}VND");
+				WriteLine(p.Drink);
 			}
 		}
 	}

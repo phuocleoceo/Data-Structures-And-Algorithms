@@ -4,7 +4,7 @@
 	{
 		static void Main(string[] args)
 		{
-			LinkedList lkl = new LinkedList();
+			LinkedList<Drink> lkl = new LinkedList<Drink>();
 			lkl.AddToHead(new Drink("Ca phe den", 8000));
 			lkl.AddToHead(new Drink("Ca phe sua da", 10000));
 			lkl.AddToHead(new Drink("Capuchino", 25000));

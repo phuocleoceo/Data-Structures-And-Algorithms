@@ -2,24 +2,24 @@ using static System.Console;
 
 namespace LinkedList_CafeManagement
 {
-	public class LinkedList
+	public class LinkedList<T> where T : class
 	{
-		private Node List;
+		private Node<T> List;
 
 		public LinkedList()
 		{
 			List = null;
 		}
-		public Node CreateNode(Drink d)
+		public Node<T> CreateNode(T entity)
 		{
-			Node temp = new Node();
-			temp.Drink = d;
+			Node<T> temp = new Node<T>();
+			temp.entity = entity;
 			temp.Next = null;
 			return temp;
 		}
-		public void AddToHead(Drink d)
+		public void AddToHead(T entity)
 		{
-			Node temp = CreateNode(d);
+			Node<T> temp = CreateNode(entity);
 			if (List == null) List = temp;
 			else
 			{
@@ -28,27 +28,27 @@ namespace LinkedList_CafeManagement
 			}
 		}
 
-		public void AddToTail(Drink d)
+		public void AddToTail(T entity)
 		{
-			Node temp = CreateNode(d);
+			Node<T> temp = CreateNode(entity);
 			if (List == null) List = temp;
 			else
 			{
-				Node p = List;
+				Node<T> p = List;
 				while (p.Next != null) p = p.Next;
 				p.Next = temp;
 			}
 		}
 
-		public void AddToAnyPosition(int position, Drink d)
+		public void AddToAnyPosition(int position, T entity)
 		{
 			if (position == 0 || List == null)
 			{
-				AddToHead(d);
+				AddToHead(entity);
 			}
 			else
 			{
-				Node p = List;
+				Node<T> p = List;
 				int k = 1;
 				while (p != null && k != position)
 				{
@@ -58,11 +58,11 @@ namespace LinkedList_CafeManagement
 				// k > List.Lenght-1
 				if (k != position)
 				{
-					AddToTail(d);
+					AddToTail(entity);
 				}
 				else
 				{
-					Node temp = CreateNode(d);
+					Node<T> temp = CreateNode(entity);
 					temp.Next = p.Next;
 					p.Next = temp;
 				}
@@ -71,9 +71,9 @@ namespace LinkedList_CafeManagement
 
 		public void ExportList()
 		{
-			for (Node p = List; p != null; p = p.Next)
+			for (Node<T> p = List; p != null; p = p.Next)
 			{
-				WriteLine(p.Drink);
+				WriteLine(p.entity);
 			}
 		}
 	}

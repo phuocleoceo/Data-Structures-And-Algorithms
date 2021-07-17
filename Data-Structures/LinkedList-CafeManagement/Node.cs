@@ -1,9 +1,9 @@
 namespace LinkedList_CafeManagement
 {
-	public class Node
+	public class Node<T> where T : class
 	{
-		public Drink Drink { get; set; }
+		public T entity { get; set; }
 
-		public Node Next { get; set; }
+		public Node<T> Next { get; set; }
 	}
 }

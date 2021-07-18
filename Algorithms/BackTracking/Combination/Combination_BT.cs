@@ -11,7 +11,7 @@ namespace Combination
 
 		public Combination_BT() { }
 
-		public void Export()
+		private void Export()
 		{
 			Write((count++) + " : ");
 			for (int i = 1; i <= k; i++)
@@ -21,7 +21,7 @@ namespace Combination
 			WriteLine("");
 		}
 
-		public void Try(int i)
+		private void Try(int i)
 		{
 			for (int j = 1 + A[i - 1]; j <= n - k + i; j++)
 			{

@@ -15,7 +15,7 @@ namespace Arrangement
 			A = new int[MAX];
 		}
 
-		public void Export()
+		private void Export()
 		{
 			Write((count++) + " : ");
 			for (int i = 1; i <= k; i++)
@@ -25,7 +25,7 @@ namespace Arrangement
 			WriteLine("");
 		}
 
-		public void Try(int i)
+		private void Try(int i)
 		{
 			for (int j = 1; j <= n; j++)
 			{

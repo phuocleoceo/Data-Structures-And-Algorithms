@@ -12,28 +12,7 @@ namespace Arrangement
 
 		public Arrangement_BT()
 		{
-			this.k = 1;
-			this.n = 1;
-			count = 1;
 			A = new int[MAX];
-			USED = new bool[MAX];
-		}
-
-		public Arrangement_BT(int k, int n)
-		{
-			this.k = k;
-			this.n = n;
-			count = 1;
-			A = new int[MAX];
-			USED = new bool[MAX];
-		}
-
-		public void SetValue(int k, int n)
-		{
-			this.k = k;
-			this.n = n;
-			count = 1;
-			USED = new bool[MAX];
 		}
 
 		public void Export()
@@ -61,8 +40,12 @@ namespace Arrangement
 			}
 		}
 
-		public void Execute()
+		public void Execute(int k, int n)
 		{
+			this.k = k;
+			this.n = n;
+			count = 1;
+			USED = new bool[MAX];
 			Try(1);
 		}
 	}

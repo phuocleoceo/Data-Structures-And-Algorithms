@@ -11,25 +11,7 @@ namespace ArrangementWithRepetition
 
 		public AWR_BT()
 		{
-			this.k = 1;
-			this.n = 1;
-			count = 1;
 			A = new int[MAX];
-		}
-
-		public AWR_BT(int k, int n)
-		{
-			this.k = k;
-			this.n = n;
-			count = 1;
-			A = new int[MAX];
-		}
-
-		public void SetValue(int k, int n)
-		{
-			this.k = k;
-			this.n = n;
-			count = 1;
 		}
 
 		public void Export()
@@ -52,8 +34,11 @@ namespace ArrangementWithRepetition
 			}
 		}
 
-		public void Execute()
+		public void Execute(int k, int n)
 		{
+			this.k = k;
+			this.n = n;
+			count = 1;
 			Try(1);
 		}
 	}

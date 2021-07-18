@@ -69,6 +69,14 @@ namespace LinkedList_CafeManagement
 			}
 		}
 
+		public void AddRange(T[] entityArray)
+		{
+			for (int i = 0; i < entityArray.Length; i++)
+			{
+				AddToTail(entityArray[i]);
+			}
+		}
+
 		public void ExportList()
 		{
 			for (Node<T> p = List; p != null; p = p.Next)

@@ -12,6 +12,10 @@
 			lkl.AddToHead(new Drink("Tra sua tran chau", 20000));
 			lkl.AddToTail(new Drink("Gin", 100000));
 			lkl.AddToAnyPosition(5, new Drink("Vodka", 90000));
+			lkl.AddRange(new Drink[]{
+				new Drink("Tra tac",10000),
+				new Drink("Sua dua",5000)
+			});
 			lkl.ExportList();
 		}
 	}

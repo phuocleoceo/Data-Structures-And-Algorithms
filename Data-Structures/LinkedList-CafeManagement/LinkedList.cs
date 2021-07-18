@@ -2,7 +2,7 @@ using static System.Console;
 
 namespace LinkedList_CafeManagement
 {
-	public class LinkedList<T> where T : class
+	public class LinkedList<T>
 	{
 		private Node<T> List;
 

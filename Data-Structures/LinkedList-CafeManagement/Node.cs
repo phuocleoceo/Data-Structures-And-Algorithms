@@ -1,6 +1,6 @@
 namespace LinkedList_CafeManagement
 {
-	public class Node<T> where T : class
+	public class Node<T>
 	{
 		public T entity { get; set; }
 

@@ -1,4 +1,5 @@
-﻿namespace LinkedList_CafeManagement
+﻿using static System.Console;
+namespace LinkedList_CafeManagement
 {
 	class Program
 	{
@@ -17,6 +18,13 @@
 				new Drink("Sua dua",5000)
 			});
 			lkl.ExportList();
+			WriteLine("----------------------------------------------");
+			LinkedList<int> lklInterger = new LinkedList<int>();
+			lklInterger.AddToHead(4);
+			lklInterger.AddToTail(5);
+			lklInterger.AddToAnyPosition(1, 7);
+			lklInterger.AddRange(new int[] { 10, 11, 12 });
+			lklInterger.ExportList();
 		}
 	}
 }
